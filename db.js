@@ -1,7 +1,12 @@
 
 let  mongoose = require("mongoose");
+require('dotenv').config();
 
-let mongoDBURL ="mongodb://127.0.0.1:27017/practicedb";
+// let mongoDBURL ="mongodb://127.0.0.1:27017/practicedb";
+
+// let mongoDBURL = 'mongodb+srv://Menu:abh1234AB@cluster0.jba5xp9.mongodb.net/';
+
+let mongoDBURL= process.env.DB_URL;
 
  mongoose.connect(mongoDBURL);
 
