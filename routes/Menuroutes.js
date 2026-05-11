@@ -3,6 +3,14 @@ const router = express.Router();
 
 let  menu =require('../models/Menu')
 
+const logrequest = (req,res,next)=>{
+
+    console.log(`${new Date().toLocaleString()} request made to  :${req.originalUrl}`);
+    next();
+}
+
+router.use(logrequest)
+
 router.post('/', async(req,res)=>{
 
     try {

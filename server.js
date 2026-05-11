@@ -6,6 +6,20 @@ require('dotenv').config();
 let  db =require('./db');
 let  menuRoutes =require('./routes/Menuroutes')
 
+
+
+
+
+
+const logrequest = (req,res,next)=>{
+
+    console.log(`${new Date().toLocaleString()} request made to  :${req.originalUrl}`);
+    next();
+}
+
+
+
+
 let app =express();
 app.use(bodyParser.json());
 
